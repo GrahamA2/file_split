@@ -29,7 +29,7 @@ readInterface.on('line', function(line) {
         if ( local_line_count === 0 ){
             //Create a new file
             wf(file_number,'{"schemaVersion":"796","build":"445","start":true,"majorVersion":"5","minorVersion":"4","revision":"0"}')
-            wf(file_number,'{"name":"WWXWaterwaySensorReadings","type":"Stream"}')
+            wf(file_number,`{"name":"${process.env.WWX_STREAMNAME}","type":"Stream"}`)
             wf(file_number,line)
             local_line_count++
             console.log(`Processing batch ${file_number}`);
